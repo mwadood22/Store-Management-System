@@ -1,0 +1,16 @@
+
+        2               ColdDrink               35               2300               2500
+
+        3               Cofee               20               200               250
+
+        4               ColdDrink               50               2300               2500
+
+        5               Cofee               20               200               250
+
+        6               ColdDrink               34               2300               2500
+
+        7               OyeHoyee               20               360               400
+
+        8               ICECREAM               10               180               200
+
+        0               sugar               20               450               700

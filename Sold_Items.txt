@@ -1,0 +1,9 @@
+Item name: ColdDrinkItem Price: 50Item Quantity: 5
+Item name: sugarItem Price: 35Item Quantity: 4
+Item name: sugarItem Price: 35Item Quantity: 4
+Item name: ColdDrinkItem Price: 50Item Quantity: 4
+Item name: ColdDrinkItem Price: 50Item Quantity: 4
+Item name: ColdDrinkItem Price: 50Item Quantity: 5
+Item name: ColdDrinkItem Price: 50Item Quantity: 4
+Item name: ColdDrinkItem Price: 50Item Quantity: 4
+Item name: ColdDrinkItem Price: 59Item Quantity: 8

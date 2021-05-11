@@ -1,0 +1,110 @@
+void Admin::Remove_Any_Item(string Delete_Item_Id)
+{
+	ifstream fin;
+	ofstream fout;
+	bool success = false;
+	string ItemId, CostPrice, SalePrice, Quantity_;
+	string Name_;
+	const int ARRAY_SIZE = 100;
+	string ID[ARRAY_SIZE] = { " " };
+	string NAME[ARRAY_SIZE] = { " " };
+	string QUANTITY[ARRAY_SIZE] = { " " };
+	string COST[ARRAY_SIZE] = { " " };
+	string SALE[ARRAY_SIZE] = { " " };
+	int counter = 0;
+	fin.open("Data.txt");
+
+	//Open file and extract contents
+	if (fin.is_open())
+	{
+		while (fin >> ItemId && counter < ARRAY_SIZE)
+		{
+			fin >> Name_ >> Quantity_ >> CostPrice >> SalePrice;
+			if (ItemId != Delete_Item_Id)
+			{
+				ID[counter] = ItemId;
+				NAME[counter] = Name_;
+				QUANTITY[counter] = Quantity_;
+				COST[counter] = CostPrice;
+				SALE[counter] = SalePrice;
+				counter++;
+			}
+			else
+			{
+				success = true;
+			}
+		}
+		fin.close();
+	}
+	else
+		cout << "File cannot be read." << endl;
+	fout.open("Data.txt"); //Overwrites data in file and program.
+	if (fout.is_open())
+	{
+		for (int i = 0; i < counter; i++)
+		{
+			fout << endl;
+			fout << "        " << ID[i] << "               " << NAME[i] << "               " << QUANTITY[counter][i] << "               " << COST[i] << "               " << SALE[i] << endl;
+		}
+		fout.close();
+	}
+	else
+		cout << "Cannot read file!" << endl;
+	//	ifstream fin;
+	//	ofstream fout;
+	//	fin.open("Data.txt", ios::in);
+	//	string str;  bool Tell = false;  int Size = 0;
+	//	while (fin >> Item_Id >> Name >> Quantity >> Cost_Price >> Sale_Price)
+	//	{
+	//		Size++;
+	//		if (Delete_Item_Id == Item_Id)
+	//		{
+	//			Size++;
+	//			Tell = true;
+	//			break;
+	//		}
+	//	}
+	//	fin.close();
+	//	cout << " Size = " << Size << " Tell " << Tell << endl;
+	//	/*if (Tell = true)
+	//	{
+	//		string *Item_Id_ = new string[Size];
+	//		string *Name_ = new string[Size];
+	//		string *Cost_Price_ = new string[Size];
+	//		string *Sale_Price_ = new  string[Size];
+	//		string  *Quantity_ = new  string[Size];
+	//
+	//		fin.open("Data.txt", ios::in);
+	//		int i = 0;
+	//		while (fin >> Item_Id >> Name >> Quantity >> Cost_Price >> Sale_Price)
+	//		{
+	//			i++;
+	//			if (Delete_Item_Id != Item_Id)
+	//			{
+	//				Item_Id_[i] = Item_Id;
+	//				Name_[i] = Name;
+	//				Quantity_[i] = Quantity;
+	//				Cost_Price_[i] = Cost_Price;
+	//				Sale_Price_[i] = Sale_Price;
+	//			}
+	//		}
+	//		fin.close();
+	//		for (int j = 0; j < i; i++)
+	//		{
+	//			fout << endl;
+	//			fout << "        " << Item_Id_[j] << "               " << Name_[j] << "               " << Quantity_[j] << "               " << Cost_Price_[j] << "               " << Sale_Price_[j] << endl;
+	//		}
+	//		fout.open("Data.txt");
+	//	}
+	//	else
+	//	{
+	//		cout << "\t" << "\t" << " _________________________________________________________________________ " << endl;
+	//		cout << "\t" << "\t" << "|                                                                         |" << endl;
+	//		cout << "\t" << "\t" << "|                                                                         |" << endl;
+	//		cout << "\t" << "\t" << "|        Sorry   No    Such   Id   No   Record   Is   Exist               | " << endl;
+	//		cout << "\t" << "\t" << "|                                                                         |" << endl;
+	//		cout << "\t" << "\t" << "|_________________________________________________________________________|" << endl;
+	//	}
+	//*/
+	//}
+}

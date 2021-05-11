@@ -1,0 +1,1 @@
+Item name: ColdDrinkItem Price: 50Item Quantity: 6
